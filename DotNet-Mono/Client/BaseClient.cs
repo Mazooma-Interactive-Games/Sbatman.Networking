@@ -324,7 +324,7 @@ namespace Sbatman.Networking.Client
                                 Array.Copy(_ByteBuffer, 0, packet, 0, size);
                                 Array.Copy(_ByteBuffer, size, _ByteBuffer, 0, _ByteBufferCount - size);
                                 _ByteBufferCount -= size;
-                                Packet p = Packet.FromByteArray(packet);
+                                Packet p = Packet.FromByteArray(ref packet);
                                 if (p != null) lock (_PacketsToProcess)
                                     {
                                         _PacketsToProcess.Enqueue(p);

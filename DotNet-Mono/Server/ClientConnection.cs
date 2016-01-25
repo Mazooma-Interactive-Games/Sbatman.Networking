@@ -237,7 +237,7 @@ namespace Sbatman.Networking.Server
                                     Array.Copy(_ByteBuffer, 0, packet, 0, size);
                                     Array.Copy(_ByteBuffer, size, _ByteBuffer, 0, _ByteBufferCount - size);
                                     _ByteBufferCount -= size;
-                                    _PacketsToProcess.Add(Packet.FromByteArray(packet));
+                                    _PacketsToProcess.Add(Packet.FromByteArray(ref packet));
                                 }
                                 else
                                 {
